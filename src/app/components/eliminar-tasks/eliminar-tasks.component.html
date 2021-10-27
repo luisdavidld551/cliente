@@ -1,0 +1,39 @@
+<div class="container" >
+    <ngb-alert #staticAlert *ngIf="!staticAlertClosed" [type]="typeAler" (closed)="staticAlertClosed = true">
+        {{ successMessage }}
+    </ngb-alert>
+</div>
+
+<div class="container">
+    <form action="">
+        <h2>Eliminar Task</h2>
+        <br>
+        <div>
+            <label for="">Id del Task</label>
+            <input type="text" name="id" id="" [(ngModel)]="id">
+        </div>
+        <br>
+        <button type="submit" (click)="eliminarB()" class="btn btn-danger">Eliminar</button>
+    </form>
+</div>
+<br>
+
+<div class="container">
+    <ng-template #contenido let-modal>
+      <div class="modal-header">
+        <h4 class="modal-title">Actualizar un nuevo Task</h4>
+        <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+           <p>Seguro que desea eliminar el Task con el id: {{taks2.id}} ?</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" (click)="eliminarTask()">Eliminar</button>
+        <button type="button" class="btn btn-danger" (click)="eliminarClose()">Cancelar</button>
+    </div>
+    </ng-template>
+</div>

@@ -1,0 +1,40 @@
+<div class="container">
+  <ngb-alert #staticAlert *ngIf="!staticAlertClosed" type="warning" (closed)="staticAlertClosed = true">{{
+    successMessage }}</ngb-alert>
+</div>
+
+<div class="container">
+  <form action="">
+    <h2>Buscar un nuevo Task</h2>
+    <br>
+    <div class="mb-3 row">
+      <label for="" class="col-sm-2 col-form-label">Id del Task</label>
+      <div class="col-sm-10">
+        <input type="text" name="id" id="" [(ngModel)]="id">
+      </div>
+    </div>
+    <br>
+    <button type="submit" (click)="getShow()" class="btn btn-success">Buscar</button>
+  </form>
+
+  <div class="container" [style.display]="toggoleShowHide">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>nombre</th>
+          <th>descripcion</th>
+          <th>estrado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{taks3.id}}</td>
+          <td>{{taks3.nombre}}</td>
+          <td>{{taks3.descripcion}}</td>
+          <td>{{taks3.estado}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

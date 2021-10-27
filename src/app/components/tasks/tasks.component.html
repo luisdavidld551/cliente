@@ -1,0 +1,21 @@
+<div class="container">
+  <h2>Todos los Task</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>nombre</th>
+        <th>descripcion</th>
+        <th>estrado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let takss of taks">
+        <td>{{takss.id}}</td>
+        <td>{{takss.nombre}}</td>
+        <td>{{takss.descripcion}}</td>
+        <td>{{takss.estado}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
