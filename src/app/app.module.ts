@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -6,22 +6,22 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { TasksComponent } from './components/tasks/tasks.component';
-import { NavComponent } from './components/nav/nav.component';
-import { BuscarTasksComponent } from './components/buscar-tasks/buscar-tasks.component';
-import { ActualizarTasksComponent } from './components/actualizar-tasks/actualizar-tasks.component';
-import { EliminarTasksComponent } from './components/eliminar-tasks/eliminar-tasks.component';
-import { RegistrarTasksComponent } from './components/registrar-tasks/registrar-tasks.component';
+import { NavComponent } from './nav/nav.component';
+import { TaskModule } from './task/task.module';
+import { UserModule } from './user/user.module';
+import { SigninComponent } from './login/signin/signin.component';
+import { SignupComponent } from './login/signup/signup.component';
+import { UserProfileComponent } from './login/user-profile/user-profile.component';
+import { AuthInterceptor } from './login/services/auth.interceptor';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    TasksComponent,
     NavComponent,
-    BuscarTasksComponent,
-    ActualizarTasksComponent,
-    EliminarTasksComponent,
-    RegistrarTasksComponent
+    SigninComponent,
+    SignupComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -30,9 +30,17 @@ import { RegistrarTasksComponent } from './components/registrar-tasks/registrar-
     HttpClientModule,
     NgbModule,
     ReactiveFormsModule,
+    TaskModule,
+    UserModule,
     
   ],
-  providers: [],
+  providers: [
+    {
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

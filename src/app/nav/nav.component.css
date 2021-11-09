@@ -1,0 +1,15 @@
+nav.navbar {
+    background: linear-gradient(135deg,#0143a3,#0273d4);
+}
+#logoutText{
+    color: white;
+    display:none;
+}
+@media screen and (max-width: 991px) {
+    #logout{
+        display:none;
+    }
+    #logoutText{
+        display:block;
+    }
+}
