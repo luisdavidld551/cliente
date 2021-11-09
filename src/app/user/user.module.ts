@@ -25,8 +25,7 @@ import { BuscarUsersComponent } from './user/buscar-users/buscar-users.component
     UserRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    NgbModule,
-  
+    NgbModule
   ]
 })
 export class UserModule { }

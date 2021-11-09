@@ -31,8 +31,7 @@ import { AuthInterceptor } from './login/services/auth.interceptor';
     NgbModule,
     ReactiveFormsModule,
     TaskModule,
-    UserModule,
-    
+    UserModule
   ],
   providers: [
     {

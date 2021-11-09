@@ -24,7 +24,7 @@ import { TasksComponent } from './task/tasks/tasks.component';
     TaskRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    NgbModule,
+    NgbModule
   ]
 })
 export class TaskModule { }
