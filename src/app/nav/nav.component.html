@@ -1,11 +1,11 @@
-<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light mb-3">
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark mb-3">
 
   <a routerLink="/profile">
     <img class="navbar-brand mr-md-2 mr-0" src="../assets/agenda.png" width="40px" height="40px" title="Home"
       alt="logo">
   </a>
 
-  <h2 *ngIf="!isSignedIn">Agenda</h2>
+  <h2 *ngIf="!isSignedIn" id="agendaLogo">Agenda</h2>
 
   <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed"> &#9776; </button>
 
@@ -13,39 +13,42 @@
     <div class="w-100 order-1 order-md-0">
       <ul class="navbar-nav mr-auto">
         <li ngbDropdown class="nav-item" *ngIf="isSignedIn">
-          <a href (click)="false" class="nav-link" ngbDropdownToggle>Tasks</a>
+          <a href (click)="false" class="nav-link active" ngbDropdownToggle>Tasks</a>
           <div ngbDropdownMenu>
             <a class="nav-item" ngbDropdownItem routerLink="/tasks" (click)="isMenuCollapsed = true">Inicio</a>
-            <a class="nav-item" ngbDropdownItem routerLink="/tasks/Registrar"
-              (click)="isMenuCollapsed = true">Registrar</a>
+            <a class="nav-item" ngbDropdownItem routerLink="/tasks/Registrar" (click)="isMenuCollapsed = true">Registrar</a>
             <a class="nav-item" ngbDropdownItem routerLink="/tasks/Buscar" (click)="isMenuCollapsed = true">Buscar</a>
-            <a class="nav-item" ngbDropdownItem routerLink="/tasks/Actualizar"
+            <!--<a class="nav-item" ngbDropdownItem routerLink="/tasks/Actualizar"
               (click)="isMenuCollapsed = true">Actualizar</a>
             <a class="nav-item" ngbDropdownItem routerLink="/tasks/Eliminar"
-              (click)="isMenuCollapsed = true">Eliminar</a>
+              (click)="isMenuCollapsed = true">Eliminar</a>-->
           </div>
         </li>
         <li ngbDropdown class="nav-item" *ngIf="isSignedIn">
-          <a href (click)="false" class="nav-link" ngbDropdownToggle>Usuarios</a>
+          <a href (click)="false" class="nav-link active" ngbDropdownToggle>Usuarios</a>
           <div ngbDropdownMenu>
             <a ngbDropdownItem routerLink="/usuarios" (click)="isMenuCollapsed = true">Inicio</a>
             <a ngbDropdownItem routerLink="/usuarios/Registrar" (click)="isMenuCollapsed = true">Registrar</a>
             <a ngbDropdownItem routerLink="/usuarios/Buscar" (click)="isMenuCollapsed = true">Buscar</a>
-            <a ngbDropdownItem routerLink="/usuarios/Actualizar" (click)="isMenuCollapsed = true">Actualizar</a>
-            <a ngbDropdownItem routerLink="/usuarios/Eliminar" (click)="isMenuCollapsed = true">Eliminar</a>
+            <!--<a ngbDropdownItem routerLink="/usuarios/Actualizar" (click)="isMenuCollapsed = true">Actualizar</a>
+            <a ngbDropdownItem routerLink="/usuarios/Eliminar" (click)="isMenuCollapsed = true">Eliminar</a>-->
           </div>
+        </li>
+        <li class="nav-item" *ngIf="isSignedIn">
+          <a href (click)="false" class="nav-link active">Listar Tasks</a>
         </li>
       </ul>
     </div>
     <div class="mx-auto order-2">
       <a href (click)="signOut()" *ngIf="isSignedIn">
-        <img id="logout" src="../assets/cerrar-sesion.png" width="30px" height="30px" alt="Chao">
-        <h5 id="logoutText">Cerrar Sesion</h5>
+        <img id="logout" src="../assets/logout.png" width="30px" height="30px" alt="Chao">
+        <p id="logoutText">Cerrar Sesion</p>
       </a>
     </div>
   </div>
 
 </nav>
-
 <br>
-<br><br>
+<br>
+<br>
+<br>

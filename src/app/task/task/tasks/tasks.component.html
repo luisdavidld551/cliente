@@ -6,7 +6,8 @@
         <th>Id</th>
         <th>nombre</th>
         <th>Descripcion</th>
-        <th>Estrado</th>
+        <th>Estado</th>
+        <th>Responsable</th>
         <th>Opcion</th>
       </tr>
     </thead>
@@ -16,7 +17,15 @@
         <td>{{takss.nombre}}</td>
         <td>{{takss.descripcion}}</td>
         <td>{{takss.estado}}</td>
-        <td style="text-align: center">
+        <td class="text-center">
+          <div *ngIf="(takss.user == null)">
+            <a (click)="deleteTasks(takss.id)" class="btn btn-success"  id="btnSmall">
+              <i class="material-icons">add</i>
+            </a>
+          </div>
+          <div *ngIf="(takss.user != null)">{{takss.user['name']}}</div>
+        </td>
+        <td class="text-center">
           <a (click)="editTasks(takss)" class="btn btn-secondary" id="btnSmall">
             <i class="material-icons">edit</i>
           </a>

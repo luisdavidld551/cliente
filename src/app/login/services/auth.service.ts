@@ -20,12 +20,13 @@ export class User {
 export class AuthService {
 
   private userAuth = environment.base + "auth/";
+  private userRegi = environment.base + "users/";
 
   constructor(private http: HttpClient) { }
 
   // User registration
   register(user: Users): Observable<any> {
-    return this.http.post(this.userAuth +'register', user);
+    return this.http.post(this.userRegi +'store', user);
   }
 
   // Login

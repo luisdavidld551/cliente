@@ -9,7 +9,7 @@ export class TokenService {
 
   private issuer = {
     login: environment.base + 'auth/login',
-    register: environment.base + 'auth/register'
+    register: environment.base + 'users/store'
   }
 
   constructor() { }

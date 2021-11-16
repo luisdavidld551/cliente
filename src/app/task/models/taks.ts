@@ -3,4 +3,5 @@ export interface Taks{
     nombre:string;
     descripcion:string;
     estado:string;
+    user_id:number;
 }

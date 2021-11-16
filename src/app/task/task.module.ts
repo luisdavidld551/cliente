@@ -5,19 +5,17 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { TaskRoutingModule } from './task-routing.module';
 import { BuscarTasksComponent } from './task/buscar-tasks/buscar-tasks.component';
-import { ActualizarTasksComponent } from './task/actualizar-tasks/actualizar-tasks.component';
-import { EliminarTasksComponent } from './task/eliminar-tasks/eliminar-tasks.component';
 import { RegistrarTasksComponent } from './task/registrar-tasks/registrar-tasks.component';
 import { TasksComponent } from './task/tasks/tasks.component';
+import { ListarTasksComponent } from './task/listar-tasks/listar-tasks.component';
 
 
 @NgModule({
   declarations: [
     TasksComponent,
     BuscarTasksComponent,
-    ActualizarTasksComponent,
-    EliminarTasksComponent,
-    RegistrarTasksComponent
+    RegistrarTasksComponent,
+    ListarTasksComponent
   ],
   imports: [
     CommonModule,

@@ -36,13 +36,35 @@ tr:hover td {
     color: white;
 }
 form{
+    font-size: 20px;
+    padding: 40px;
+    background: #ffffff8c; 
+    border: 1px solid #5BC0DE;
+    border-radius: 0.25em;
     text-align: justify;
 }
+
 #btnSmall{
     padding: 0.05rem 0.02rem;
 }
 
-ngb-alert{
-    margin-left: 10em;
-    width: 50%;
+#alertas{
+    /* text-align: center;
+    margin-left: 10em;*/
+    text-align: center;
+    width: 70%;
+}
+
+body{
+    width: 100%;
+    min-height: 100%;
+    position: absolute;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-image: url(assets/fondo.png);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
 }

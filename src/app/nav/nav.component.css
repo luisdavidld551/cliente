@@ -1,8 +1,16 @@
-nav.navbar {
-    background: linear-gradient(135deg,#0143a3,#0273d4);
+ /*nav.navbar {
+   background-color: (##304046);
+}*/
+
+a{
+    font-size: 22px;
+}
+#agendaLogo{
+    color: white;
 }
 #logoutText{
     color: white;
+    font-size: 22px;
     display:none;
 }
 @media screen and (max-width: 991px) {

@@ -15,23 +15,25 @@ export class RegistrarTasksComponent implements OnInit {
   typeAler:string ="success"; 
   staticAlertClosed = true;
   successMessage = '';
-  id:number = 0;
+  //id:number = 0;
 
   constructor(private taskService:TaskService, private registrarFT:FormBuilder) { }
 
   registrarFTB = this.registrarFT.group({
     nombre: ['', Validators.required],
     descripcion: ['', Validators.required],
-    estado: ['', Validators.required]
+    estado: ['sin asignar']
   });
 
   ngOnInit(): void {
   }
 
+ 
+  
   registrarTask(){
     this.taskService.registrar(this.registrarFTB.value ).subscribe(
       res => {
-        console.log('HTTP response', res);
+        //console.log('HTTP response', res);
         this.successMessage ='Task con el Id: ' + res.id + " fue registrado";
         this.changeSuccessMessage();
       },
