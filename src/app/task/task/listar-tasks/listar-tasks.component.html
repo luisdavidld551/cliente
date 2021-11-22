@@ -1,1 +1,52 @@
-<p>listar-tasks works!</p>
+<div class="container" id="alertas">
+  <ngb-alert #staticAlert *ngIf="!staticAlertClosed" [type]="typeAler" (closed)="staticAlertClosed = true">{{
+    successMessage }}</ngb-alert>
+</div>
+
+<div class="container">
+  <h1>Todos los Task</h1>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>nombre</th>
+        <th>Responsable</th>
+        <th>Estado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of taks">
+        <th style="text-align: center">{{task.id}}</th>
+        <td>{{task.nombre}}</td>
+        <td>{{task.user['name']}}</td>
+        <td class="text-center">
+          {{task.estado}}
+          <a *ngIf="(task.estado != 'Finalizado')" (click)="finalizarTasks(task.id)" class="btn btn-success"
+            id="btnSmall">
+            <i class="material-icons">edit</i>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="container">
+  <ng-template #contenidoFinalizar let-modal>
+    <div class="modal-header">
+      <h1 class="modal-title">Finalizar una Task</h1>
+      <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="container">
+        <p>Seguro que ya finalizo el Task con el id: {{id_task}} ?</p>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-success" (click)="finalizarTask()">Finalizar</button>
+      <!--<button type="button" class="btn btn-danger" (click)="modalClose()">Cancelar</button>-->
+    </div>
+  </ng-template>
+</div>

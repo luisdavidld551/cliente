@@ -25,18 +25,18 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   // User registration
-  register(user: Users): Observable<any> {
-    return this.http.post(this.userRegi +'store', user);
+  register(user: Users): Observable<Users> {
+    return this.http.post<Users>(this.userRegi +'store', user);
   }
 
   // Login
-  signin(user: Users): Observable<any> {
-    return this.http.post<any>(this.userAuth +'login', user);
+  signin(user: Users): Observable<Users> {
+    return this.http.post<Users>(this.userAuth +'login', user);
   }
 
   // Access user profile
-  profileUser(): Observable<any> {
-    return this.http.get(this.userAuth +'user-profile');
+  profileUser(): Observable<Users> {
+    return this.http.get<Users>(this.userAuth +'user-profile');
   }
 
 }

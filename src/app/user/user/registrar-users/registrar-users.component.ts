@@ -26,7 +26,7 @@ export class RegistrarUsersComponent implements OnInit {
     email: ['', Validators.required],
     password: ['', Validators.required],
     estado: ['', Validators.required],
-    rol_id: ['', Validators.required]
+    role_id: ['', Validators.required]
   });
 
   ngOnInit(): void {
@@ -56,7 +56,7 @@ export class RegistrarUsersComponent implements OnInit {
       email: '',
       password: '',
       estado: '',
-      rol_id: ''
+      role_id: ''
     });
   }
 

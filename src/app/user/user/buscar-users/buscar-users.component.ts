@@ -22,7 +22,10 @@ export class BuscarUsersComponent implements OnInit {
   id:number = 0;
   user: any = [];
 
-  constructor(private usersService:UsersService,private config: NgbModalConfig, private modal:NgbModal, private actualizarFT:FormBuilder) {  }
+  constructor(private usersService:UsersService,
+              private config: NgbModalConfig,
+              private modal:NgbModal,
+              private actualizarFT:FormBuilder) { }
 
   actualizarFTB = this.actualizarFT.group({
     id: [{value: '', disabled: true}, Validators.required],
@@ -30,7 +33,7 @@ export class BuscarUsersComponent implements OnInit {
     email: ['', Validators.required],
     //password: ['', Validators.required],
     estado: ['', Validators.required],
-    rol_id: ['', Validators.required]
+    role_id: ['', Validators.required]
   });
   
   ngOnInit(): void {
@@ -58,6 +61,7 @@ export class BuscarUsersComponent implements OnInit {
     this.staticAlertClosed = false;
     setTimeout(() => this.staticAlert.close(), 5000);
   }
+
   editUser(){
     this.typeAler ="success";
 
@@ -66,7 +70,7 @@ export class BuscarUsersComponent implements OnInit {
       name: this.user.name,
       email: this.user.email,
       estado: this.user.estado,
-      rol_id: this.user.rol_id
+      role_id: this.user.role_id
     });
 
     this.config.backdrop = 'static';
@@ -125,7 +129,7 @@ export class BuscarUsersComponent implements OnInit {
       name: '',
       email: '',
       estado: '',
-      rol_id: ''
+      role_id: ''
     });
     this.modal.dismissAll();
   }

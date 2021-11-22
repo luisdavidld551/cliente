@@ -44,6 +44,10 @@ form{
     text-align: justify;
 }
 
+h1{
+    font-size: 2.5rem !important;
+}
+
 #btnSmall{
     padding: 0.05rem 0.02rem;
 }
@@ -67,4 +71,28 @@ body{
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+html, body { height: 100%; }
+
+.mat-snack-bar-container {
+    margin-top: 80px !important;
+    color: white ;
+    text-align: center;
+}
+.mat-simple-snackbar {
+    justify-content: center !important;
+    font-size: 1em ;
+}
+.snackbar-error {
+    background-color: #e74c3c ;
+}
+
+.snackbar-warning {
+    background-color: #f1c40f;
+}
+
+.snackbar-info {
+    background-color: #239b56;
 }

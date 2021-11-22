@@ -1,11 +1,20 @@
 export interface Users {
-    id:Number;
-    name: String;
-    email: String;
-    email_verified_at: String;
-    password: String;
-    estado: String;
-    rol_id: Number;
-    updated_at: String;
-    created_at: String;
+  id: number;
+  name: string;
+  email: string;
+  email_verified_at?: any;
+  password: String;
+  estado: string;
+  role_id: number;
+  created_at: string;
+  updated_at: string;
+  role: IRole;
 }
+
+export interface IRole {
+  id: number;
+  name: string;
+  created_at: string;
+  updated_at: string;
+}
+

@@ -9,6 +9,7 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class TaskService {
+  private base2 = environment.base + 'tasksAsignar/';
 
   private base = environment.base + 'tasks/';
 
@@ -28,8 +29,12 @@ export class TaskService {
     return this.http.get<Taks>(this.base + $id).pipe(catchError(this.errorHandler))
   }
 
+  getTaskUserId(): Observable<Taks> {
+    return this.http.get<Taks>(this.base2).pipe(catchError(this.errorHandler))
+  }
+
   actualizar($id:number,task:Task): Observable<Taks> {
-    return this.http.put<Taks>(this.base + $id, JSON.stringify(task), this.httpOptions).pipe(catchError(this.errorHandler))
+    return this.http.put<Taks>(this.base2 + $id, JSON.stringify(task), this.httpOptions).pipe(catchError(this.errorHandler))
   }
 
   eliminar($id:number): Observable<Taks> {

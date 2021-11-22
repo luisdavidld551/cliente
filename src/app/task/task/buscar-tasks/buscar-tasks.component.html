@@ -1,11 +1,11 @@
-<div class="container"  id="alertas">
+<div class="container" id="alertas">
   <ngb-alert #staticAlert *ngIf="!staticAlertClosed" [type]="typeAler" (closed)="staticAlertClosed = true">{{
     successMessage }}</ngb-alert>
 </div>
 
 <div class="container">
   <form action="">
-    <h2>Buscar un Task</h2>
+    <h1>Buscar un Task</h1>
     <br>
     <div class="mb-3 row">
       <label for="" class="col-sm-3 col-form-label">Id del Task</label>
@@ -16,7 +16,6 @@
         <button type="submit" (click)="getShow()" class="btn btn-success">Buscar</button>
       </div>
     </div>
-    
   </form>
   <br>
   <br>
@@ -40,7 +39,7 @@
           <td>{{taks.estado}}</td>
           <td class="text-center">
             <div *ngIf="(taks.user == null)">
-              <a (click)="addTask()" class="btn btn-success"  id="btnSmall">
+              <a (click)="addTask()" class="btn btn-success" id="btnSmall">
                 <i class="material-icons">add</i>
               </a>
             </div>
@@ -50,7 +49,7 @@
             <a (click)="editTask()" class="btn btn-secondary" id="btnSmall">
               <i class="material-icons">edit</i>
             </a>
-            <a (click)="deleteTask()" class="btn btn-danger"  id="btnSmall">
+            <a (click)="deleteTask()" class="btn btn-danger" id="btnSmall">
               <i class="material-icons">delete</i>
             </a>
           </td>
@@ -62,85 +61,86 @@
 
 <div class="container">
   <ng-template #contenidoActualizar let-modal>
-      <div class="modal-header">
-          <h2 class="modal-title text-center">Actualizar una Task</h2>
-          <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
-              <span aria-hidden="true">&times;</span>
-          </button>
-      </div>
-      <div class="modal-body">
-          <div class="container">
-              <form  [formGroup]="actualizarFTB" (ngSubmit)="actualizarTask()">
-                  <div class="mb-3 row">
-                      <label for="" class="col-sm-4 col-form-label">Id del Task</label>
-                      <div class="col-sm-8">
-                          <input type="text" class="form-control" name="idTask" formControlName="id">
-                      </div>
-                  </div>
-                  <div class="mb-3 row">
-                      <label for="" class="col-sm-4 col-form-label">Nombre del Task</label>
-                      <div class="col-sm-8">
-                          <input type="text" class="form-control" name="nombreTask" formControlName="nombre">
-                      </div>
-                  </div>
-                  <div class="mb-3 row">
-                      <label for="" class="col-sm-4 col-form-label">Descripcion</label>
-                      <div class="col-sm-8">
-                          <input type="text" class="form-control" name="descripcionTask" formControlName="descripcion">
-                      </div>
-                  </div>
-                  <!--<div class="mb-3 row">
+    <div class="modal-header">
+      <h1 class="modal-title text-center">Actualizar una Task</h1>
+      <button class="close" aria-label="close" type="button" (click)="modalClose()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="container">
+        <form [formGroup]="actualizarFTB" (ngSubmit)="actualizarTask()">
+          <div class="mb-3 row">
+            <label for="" class="col-sm-4 col-form-label">Id del Task</label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" name="idTask" formControlName="id">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="" class="col-sm-4 col-form-label">Nombre del Task</label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" name="nombreTask" formControlName="nombre">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="" class="col-sm-4 col-form-label">Descripcion</label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" name="descripcionTask" formControlName="descripcion">
+            </div>
+          </div>
+          <!--<div class="mb-3 row">
                       <label for="" class="col-sm-4 col-form-label">Estado</label>
                       <div class="col-sm-8">
                           <input type="text" class="form-control" name="estadoTask" formControlName="estado">
                       </div>
                   </div>-->
-                  <div class="modal-footer">
-                      <button type="submit" class="btn btn-success">Actualizar</button>
-                      <div *ngIf="(taks.user_id != null)"> <button type="button" class="btn btn-secondary" (click)="addTask()">Editar Ususario</button> </div>
-                      <button type="button" class="btn btn-danger" (click)="modalClose()">Cancelar</button>
-                  </div>
-              </form>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-success">Actualizar</button>
+            <div *ngIf="(taks.user_id != null)"> <button type="button" class="btn btn-secondary"
+                (click)="addTask()">Editar Ususario</button> </div>
+            <button type="button" class="btn btn-danger" (click)="modalClose()">Cancelar</button>
           </div>
+        </form>
       </div>
+    </div>
   </ng-template>
 </div>
 
 <div class="container">
   <ng-template #contenidoEliminar let-modal>
     <div class="modal-header">
-      <h4 class="modal-title">Eliminar una Task</h4>
-      <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
+      <h1 class="modal-title">Eliminar una Task</h1>
+      <button class="close" aria-label="close" type="button" (click)="modalClose()">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
     <div class="modal-body">
       <div class="container">
-         <p>Seguro que desea eliminar el Task con el id: {{taks.id}} ?</p>
+        <p>Seguro que desea eliminar el Task con el id: {{taks.id}} ?</p>
       </div>
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-success" (click)="eliminarTask()">Eliminar</button>
       <button type="button" class="btn btn-danger" (click)="modalClose()">Cancelar</button>
-  </div>
+    </div>
   </ng-template>
 </div>
 
 <div class="container">
   <ng-template #contenidoAsignar let-modal>
     <div class="modal-header">
-      <h4 class="modal-title">Asignar Usuario</h4>
-      <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
+      <h1 class="modal-title">Asignar Usuario</h1>
+      <button class="close" aria-label="close" type="button" (click)="modalClose()">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
     <div class="modal-body">
       <div class="container">
-        <form action="" >
+        <form action="">
           <div class="mb-3 row">
             <label for="" class="col-md-6 col-lg-3 col-form-label">Id del Usuario</label>
             <div class="col-md-8 col-lg-7">
-              <input type="text" name="id" id="" [(ngModel)]="user_id">
+              <input type="text" name="id" id="" [(ngModel)]="user_idAsignar">
             </div>
             <div class="col-md-2">
               <button type="submit" (click)="getUser()" class="btn btn-success">Buscar</button>
@@ -151,7 +151,7 @@
             <div *ngIf="(user.length === 0)">
               <textarea class="form-control" rows="2" disabled>{{userMessage}}</textarea>
             </div>
-            <div class="form-group"  *ngIf="(user.length != 0)">
+            <div class="form-group" *ngIf="(user.length != 0)">
               <textarea class="form-control" rows="2" disabled>{{user['name']}}</textarea>
             </div>
           </div>
@@ -159,8 +159,9 @@
       </div>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-success" (click)="asignarTask()">Agregar</button>
+      <button type="button" class="btn btn-success"
+        (click)="asignarTask()">Agregar</button>
       <button type="button" class="btn btn-danger" (click)="modalClose()">Cancelar</button>
-  </div>
+    </div>
   </ng-template>
 </div>

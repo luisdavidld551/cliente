@@ -1,5 +1,4 @@
-<br>
-<div class="container"  id="alertas">
+<div class="container" id="alertas">
     <ngb-alert #staticAlert *ngIf="!staticAlertClosed" [type]="typeAler" (closed)="staticAlertClosed = true">
         {{ successMessage }}
     </ngb-alert>
@@ -33,17 +32,17 @@
                 <select class="form-control" name="estadoUsuario" formControlName="estado">
                     <option selected value="activo">Activo</option>
                     <option value="inactivo">Inactivo</option>
-                  </select>
+                </select>
                 <!-- <input type="text" class="form-control" name="estadoTask" formControlName="estado">-->
             </div>
         </div>
         <div class="mb-3 row">
             <label class="col-sm-4 col-form-label">Rol</label>
             <div class="col-sm-8">
-                <select class="form-control" name="rolUsuario" formControlName="rol_id">
+                <select class="form-control" name="rolUsuario" formControlName="role_id">
                     <option selected value="1">Administrador</option>
                     <option value="2">Cliente</option>
-                  </select>
+                </select>
                 <!-- <input type="text" class="form-control" name="estadoTask" formControlName="estado">-->
             </div>
         </div>

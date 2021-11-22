@@ -1,21 +1,7 @@
 <div class="auth-wrapper">
     <form class="form-signin" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
         <h3 class="h3 mb-3 font-weight-normal text-center">Register User</h3>
-  
-        <!-- Errors -->
-        <div *ngIf=" registerForm.controls['name']?.errors" class="alert alert-danger mt-3">
-          {{ registerForm.controls['name']?.errors }}
-        </div>
-        <div *ngIf="registerForm.controls['email']?.errors" class="alert alert-danger mt-3">
-          {{ registerForm.controls['email']?.errors }}
-        </div>
-        <div *ngIf="registerForm.controls['password']?.errors" class="alert alert-danger mt-3">
-            {{ registerForm.controls['password']?.errors }}
-        </div>
-        <div *ngIf="registerForm.controls['password_confirmation']?.errors" class="alert alert-danger mt-3">
-            {{ registerForm.controls['password_confirmation'] }}
-        </div>
-  
+    
         <!-- Signup form -->
         <div class="form-group">
             <label>Name</label>

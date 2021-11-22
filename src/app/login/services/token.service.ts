@@ -14,29 +14,35 @@ export class TokenService {
 
   constructor() { }
 
-  handleData(token:string){
+  handleData(token: string) {
     localStorage.setItem('auth_token', token);
   }
+  handleDataRol(token: any) {
+    localStorage.setItem('role_id', token);
+  }
 
-  getToken(){
+  getToken() {
     return localStorage.getItem('auth_token');
   }
 
-  // Verify the token
-  isValidToken(){
-     const token = this.getToken();
-
-     if(token){
-       const payload = this.payload(token);
-       if(payload){
-         return Object.values(this.issuer).indexOf(payload.iss) > -1 ? true : false;
-       }
-     } 
-        return false;
-     
+  getRol() {
+    return localStorage.getItem('role_id');
   }
 
-  payload(token:string) {
+  // Verify the token
+  isValidToken() {
+    const token = this.getToken();
+
+    if (token) {
+      const payload = this.payload(token);
+      if (payload) {
+        return Object.values(this.issuer).indexOf(payload.iss) > -1 ? true : false;
+      }
+    }
+    return false;
+  }
+
+  payload(token: string) {
     const jwtPayload = token.split('.')[1];
     return JSON.parse(atob(jwtPayload));
   }
@@ -47,8 +53,9 @@ export class TokenService {
   }
 
   // Remove token
-  removeToken(){
+  removeToken() {
     localStorage.removeItem('auth_token');
+    localStorage.removeItem('role_id');
   }
 
 }
