@@ -3,7 +3,6 @@ import { TaskService } from '../../services/task.service';
 import { UsersService } from '../../../user/services/users.service';
 import { NgbAlert, NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { FormBuilder, Validators } from '@angular/forms';
-import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-buscar-tasks',
@@ -31,8 +30,7 @@ export class BuscarTasksComponent implements OnInit {
     private config: NgbModalConfig,
     private modal: NgbModal,
     private actualizarFT: FormBuilder,
-    private taskService: TaskService,
-    private _snackBar: MatSnackBar) { }
+    private taskService: TaskService) { }
 
   actualizarFTB = this.actualizarFT.group({
     id: [{ value: '', disabled: true }, Validators.required],
@@ -170,7 +168,6 @@ export class BuscarTasksComponent implements OnInit {
         this.changeSuccessMessage();
       },
       () => console.log('HTTP request completed.'));
-    this._snackBar.open("Probando snackbar en parzibyte.me");
     this.modalClose();
   }
 
